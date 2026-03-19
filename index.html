@@ -1,28 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expert Loggers</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <section id="hero" aria-label="seccion principal">
-        <h1>Expert Loggers</h1>
-        <ul>
-            <li>Inicio</li>
-            <li>Nosotros</li>
-            <li>Portafolio</li>
-            <li>Contacto</li>
-            <li>ubicacion</li>
-            
+
+    <!-- NAVEGACIÓN -->
+    <nav id="navbar">
+        <!-- Logo / Nombre de la empresa -->
+        <a href="index.html" class="nav-logo">Expert Loggers</a>
+        <ul class="nav-links">
+            <li><a href="pages/servicios.html">Servicios</a></li>
+            <li><a href="pages/nosotros.html">Nosotros</a></li>
+            <li><a href="pages/galeria.html">Galería</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="pages/contacto.html" class="nav-cta">Contactar</a></li>
         </ul>
-        <h2>Quienes somos</h2>
-        <p>En <b>Expert Loggers</b> nos especializamos en la fabricación de muebles de Madera y de aglomerados de alta calidad para 
-            el hogar. Con años de experiencia y dedicación, transformamos la madera en piezas únicas que combinan funcionalidad, 
-            elegancia y durabilidad. Cada proyecto es único y realizado con atención al detalle, utilizando técnicas tradicionales y materiales 
-            de la más alta calidad. Nuestro compromiso es crear muebles que no solo embellecen espacios, sino que perduran por generaciones.</p>
+    </nav>
+
+    <!-- hero -->
+    <section id="hero">
+        <div class="hero-contenido ">
+            <p class="hero-eyebrow">Muebles y diseño de interiores</p>
+            <h1 class="hero-titulo">Fabricamos el hogar <br><em>que imaginas</em></h1>
+            <p class="hero-subtitulo">
+                Creamos muebles a medida con materiales seleccionados
+                y diseñamos interiores que transforman cada espacio
+                en una experiencia única.
+            </p>
+
+            <div class="hero-botones">
+                <a href="pages/galeria.html" btn class="btn btn-primario">Ver nuestro trabajo
+                    <a href="pages/contacto.html" class="btn btn-secundario">Consulta con nosotros →</a>
+            </div>
 
     </section>
-    
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+
+        <!--columna izquierda: texto-->
+        <div class="servicios-texto">
+            <p class="section-eyebrow">
+                Nuestros servicios
+            </p>
+            <h2 class="setion-titulo">
+                Todo lo que necesitas <br>en un solo lugar
+            </h2>
+            <p class="section-descripcion">
+                Desde la primera consulta hasta la entrega final.
+                nos comprometemos con cada detalle. Diseñamos, fabricamos
+                e instalamos muebles unicos adaptados a tu espacio y estilo de vida.
+            </p>
+            <a href="#proceso" class="btn-primario">Conoce nuestro proceso</a>
+            <!-- CARRUSEL -->
+            <div class="carrusel">
+
+                <div class="carrusel-pista">
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80"
+                            alt="Living moderno">
+                        <p>Living moderno</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+                            alt="Cocina integral">
+                        <p>Cocina integral</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80"
+                            alt="Dormitorio">
+                        <p>Dormitorio</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1583845112203-29329902332e?w=600&q=80"
+                            alt="Home office">
+                        <p>Home office</p>
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+                            alt="Diseño integral">
+                        <p>Diseño integral</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--columna derecha: targetas -->
+        <div class="servicios-grilla">
+
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🛏</span>
+                <h3>Dormitorios</h3>
+                <p>Camas, placares y mesas de noche a medida para el descanso perfecto</p>
+            </div>
+
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🍳</span>
+                <h3>Cocinas</h3>
+                <p>Muebles funcionales y estéticos, optimizando cada centímetro.</p>
+            </div>
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🛋</span>
+                <h3>Living & Comedor</h3>
+                <p>Muebles de sala y bibliotecas que definen el carácter de tu hogar.</p>
+            </div>
+
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">✏️</span>
+                <h3>Diseño de Interiores</h3>
+                <p>Asesoramiento integral para crear ambientes coherentes.</p>
+            </div>
+
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🏢</span>
+                <h3>Oficinas</h3>
+                <p>Espacios de trabajo cómodos, organizados y con identidad.</p>
+            </div>
+
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🌿</span>
+                <h3>Exteriores</h3>
+                <p>Muebles para jardín y terraza resistentes y con estilo propio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros">
+        <div class="nosotros-imagen"></div>
+
+        <!-- Columna derecha: contenido -->
+        <div class="nosotros-contenido">
+
+            <p class="section-eyebrow">Quiénes Somos</p>
+            <h2 class="section-titulo">Artesanía con<br><em>alma propia</em></h2>
+            <p class="section-descripcion">
+                Somos una empresa familiar con más de 15 años transformando
+                espacios en hogares. Cada pieza que fabricamos lleva el tiempo,
+                la precisión y la pasión que merece tu hogar.
+            </p>
+            <p class="section-descripcion">
+                Trabajamos con las mejores maderas y materiales, combinando
+                técnicas tradicionales con tecnología de vanguardia para
+                ofrecer muebles que duran toda la vida.
+            </p>
+
+            <!-- Estadísticas -->
+            <div class="stats">
+                <div class="stat">
+                    <h4>+500</h4>
+                    <p>Proyectos realizados</p>
+                </div>
+                <div class="stat">
+                    <h4>15</h4>
+                    <p>Años de experiencia</p>
+                </div>
+                <div class="stat">
+                    <h4>100%</h4>
+                    <p>A medida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <main>
+        <h1>Bienvenido</h1>
+    </main>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
