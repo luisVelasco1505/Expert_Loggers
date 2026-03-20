@@ -86,7 +86,7 @@ body {
             rgba(255, 255, 255, 0.55) 0%,
             rgba(61, 43, 31, 0.80) 100%
         ),
-     url('../images/img_bienvenida.jpg'); 
+     url('../images/imagen_fondo_bienvenida.png'); 
     background-size: cover;         /* La imagen cubre todo el espacio */
     background-position: center;    /* Centrada */
     background-attachment: fixed;   /* Efecto parallax al hacer scroll */
@@ -101,10 +101,10 @@ body {
     max-width: 700px;
 }
 .hero-eyebrow {
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--color-terracota);
+    color: var(--color-oscuro);
     margin-bottom: 16px;
 }
 .hero-titulo {
@@ -122,7 +122,7 @@ body {
 .hero-subtitulo {
     font-size: 16px;
     line-height: 1.7;
-    color: rgba(70, 70, 70, 0.7);
+    color: rgb(0, 0, 0);
     max-width: 480px;
     margin-bottom: 40px;
 }
@@ -312,7 +312,6 @@ body {
 
 .carrusel-slide.activo img {
     height: 220px;
-    border-radius: 10px;
 }
 
 .carrusel-slide p {
@@ -397,4 +396,130 @@ body {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: rgba(245, 240, 232, 0.40);
+}
+
+
+/*------------------------------------------------------------------------------------*/
+/* ================================
+   GALERÍA — Sección general
+================================ */
+#galeria {
+    padding: 120px 60px;
+    background-color: var(--color-warm-white);
+}
+
+/* ================================
+   GALERÍA — Encabezado con filtros
+================================ */
+.galeria-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+}
+
+/* ================================
+   GALERÍA — Botones de filtro
+================================ */
+.galeria-filtros {
+    display: flex;
+    gap: 6px;
+}
+
+.filtro-btn {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border: 1px solid var(--color-arena);
+    background: transparent;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.25s;
+    border-radius: 3px;
+    font-family: var(--fuente-cuerpo);
+}
+
+.filtro-btn:hover,
+.filtro-btn.activo {
+    background: var(--color-oscuro);
+    color: var(--color-crema);
+    border-color: var(--color-oscuro);
+}
+
+/* ================================
+   GALERÍA — Grid asimétrico
+   12 columnas para poder combinar
+   tamaños de forma flexible
+================================ */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 280px 280px;
+    gap: 12px;
+}
+
+/* Items normales ocupan 4 columnas */
+.galeria-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 4px;
+    grid-column: span 4;        /* Ocupa 4 de las 12 columnas */
+}
+
+/* Items grandes ocupan 6 columnas */
+.galeria-item.grande {
+    grid-column: span 6;        /* Ocupa 6 de las 12 columnas */
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.06);
+}
+
+/* ================================
+   GALERÍA — Overlay con texto
+================================ */
+.galeria-overlay {
+    position: absolute;
+    inset: 0;                   /* Cubre todo el item: top/right/bottom/left: 0 */
+    background: linear-gradient(transparent, rgba(61, 43, 31, 0.75));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.galeria-item:hover .galeria-overlay {
+    opacity: 1;
+}
+
+.galeria-overlay p {
+    font-family: var(--fuente-titulo);
+    font-size: 20px;
+    color: var(--color-crema);
+    font-weight: normal;
+    margin: 0;
+    transform: translateY(8px);
+    transition: transform 0.4s ease;
+}
+
+.galeria-item:hover .galeria-overlay p {
+    transform: translateY(0);
+}
+
+/* ================================
+   GALERÍA — Items ocultos por filtro
+================================ */
+.galeria-item.oculto {
+    display: none;
 }

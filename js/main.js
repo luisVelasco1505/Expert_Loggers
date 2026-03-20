@@ -45,3 +45,84 @@ slides.forEach((slide, indice) => {
         timer = setInterval(siguiente, intervalo);
     });
 });
+
+
+// ================================
+// GALERÍA DINÁMICA — Lee carpetas
+// automáticamente desde el servidor
+// ================================
+
+const galeriaGrid = document.getElementById('galeria-grid');
+const filtros     = document.querySelectorAll('.filtro-btn');
+let imagenesGaleria = {};  // Se llena automáticamente desde el servidor
+
+// ================================
+// 1. Pide al servidor la lista de
+//    imágenes de todas las carpetas
+// ================================
+async function cargarImagenes() {
+    try {
+        const respuesta = await fetch('/api/imagenes');
+        imagenesGaleria = await respuesta.json();
+
+        // Una vez que tiene los datos construye la galería
+        construirGaleria('todos');
+
+    } catch (error) {
+        console.error('Error cargando imágenes:', error);
+    }
+}
+
+// ================================
+// 2. Construye el HTML de la galería
+// ================================
+function construirGaleria(categoriaFiltro) {
+
+    galeriaGrid.innerHTML = '';
+
+    const categorias = categoriaFiltro === 'todos'
+        ? Object.keys(imagenesGaleria)
+        : [categoriaFiltro];
+
+    let contador = 0;
+
+    categorias.forEach(categoria => {
+        imagenesGaleria[categoria].forEach(archivo => {
+
+            const esGrande = contador % 3 === 0 ? 'grande' : '';
+            contador++;
+
+            const item = document.createElement('div');
+            item.classList.add('galeria-item');
+            if (esGrande) item.classList.add('grande');
+            item.dataset.categoria = categoria;
+
+            item.innerHTML = `
+                <img 
+                    src="images/${categoria}/${archivo}" 
+                    alt="${categoria}"
+                    loading="lazy"
+                >
+                <div class="galeria-overlay">
+                    <p>${categoria.charAt(0).toUpperCase() + categoria.slice(1)}</p>
+                </div>
+            `;
+
+            galeriaGrid.appendChild(item);
+        });
+    });
+}
+
+// ================================
+// 3. Filtros
+// ================================
+filtros.forEach(boton => {
+    boton.addEventListener('click', () => {
+        filtros.forEach(b => b.classList.remove('activo'));
+        boton.classList.add('activo');
+        construirGaleria(boton.dataset.filtro);
+    });
+});
+
+// 4. Arranca todo
+cargarImagenes();

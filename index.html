@@ -170,10 +170,31 @@
         </div>
     </section>
 
+    <!-- GALERÍA -->
+    <section id="galeria">
 
-    <main>
-        <h1>Bienvenido</h1>
-    </main>
+        <div class="galeria-header">
+            <div class="galeria-titulo">
+                <p class="section-eyebrow">Galería</p>
+                <h2 class="section-titulo">Nuestro<br>trabajo</h2>
+            </div>
+
+            <div class="galeria-filtros">
+                <button class="filtro-btn activo" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="living">Living</button>
+                <button class="filtro-btn" data-filtro="cocinas">Cocinas</button>
+                <button class="filtro-btn" data-filtro="dormitorios">Dormitorios</button>
+                <button class="filtro-btn" data-filtro="interiores">Interiores</button>
+                <button class="filtro-btn" data-filtro="oficinas">Oficinas</button>
+                <button class="filtro-btn" data-filtro="exteriores">Exteriores</button>
+            </div>
+        </div>
+
+        <!-- El grid empieza vacío — JavaScript lo llena -->
+        <div class="galeria-grid" id="galeria-grid"></div>
+
+    </section>
+
     <script src="js/main.js"></script>
 </body>
 
