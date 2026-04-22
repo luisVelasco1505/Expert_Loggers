@@ -523,3 +523,379 @@ body {
 .galeria-item.oculto {
     display: none;
 }
+
+/*-----------------------------------------------------------------------------------*/
+
+/* ================================
+   PROCESO — Sección general
+================================ */
+#proceso {
+    padding: 120px 60px;
+    background-color: var(--color-crema);
+    text-align: center;
+}
+
+/* ================================
+   PROCESO — Encabezado
+================================ */
+.proceso-header {
+    max-width: 540px;
+    margin: 0 auto 80px;
+}
+
+.proceso-header .section-eyebrow {
+    justify-content: center;
+}
+
+/* ================================
+   PROCESO — Contenedor de pasos
+   Flex para poner los pasos
+   y separadores en una fila
+================================ */
+.proceso-pasos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* ================================
+   PROCESO — Cada paso
+================================ */
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;                        /* Cada paso ocupa el mismo espacio */
+    padding: 0 16px;
+}
+
+.paso-numero {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--color-oscuro);
+    color: var(--color-crema);
+    font-family: var(--fuente-titulo);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.paso:hover .paso-numero {
+    background-color: var(--color-terracota);
+}
+
+.paso-contenido h3 {
+    font-family: var(--fuente-titulo);
+    font-size: 22px;
+    font-weight: normal;
+    color: var(--color-oscuro);
+    margin-bottom: 10px;
+}
+
+.paso-contenido p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #888;
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+/* ================================
+   PROCESO — Línea separadora
+   entre cada paso
+================================ */
+.paso-separador {
+    flex-shrink: 0;                 /* No se encoge */
+    width: 60px;
+    height: 1px;
+    background-color: var(--color-arena);
+    margin-top: 32px;               /* Alineado con el centro del círculo */
+}
+
+/*--------------------------------------------------------------------------*/
+
+/* ================================
+   TESTIMONIOS — Sección general
+================================ */
+#testimonios {
+    padding: 120px 60px;
+    background-color: var(--color-oscuro);
+}
+
+/* ================================
+   TESTIMONIOS — Encabezado
+================================ */
+.testimonios-header {
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto 64px;
+}
+
+.testimonios-header .section-eyebrow {
+    justify-content: center;
+    color: var(--color-terracota);
+}
+
+.testimonios-header .section-titulo {
+    color: var(--color-crema);
+}
+
+/* ================================
+   TESTIMONIOS — Grid de tarjetas
+   2 columnas x 2 filas = 4 tarjetas
+================================ */
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* ================================
+   TESTIMONIOS — Cada tarjeta
+================================ */
+.testimonio {
+    background-color: rgba(255, 255, 255, 0.05);  /* Blanco muy sutil */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.testimonio:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(184, 149, 106, 0.3);       /* Borde terracota sutil */
+}
+
+/* Comilla decorativa de fondo */
+.testimonio::before {
+    content: '"';
+    font-family: var(--fuente-titulo);
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 10px;
+    left: 24px;
+    line-height: 1;
+}
+
+/* ================================
+   TESTIMONIOS — Estrellas
+================================ */
+.testimonio-estrellas {
+    color: var(--color-terracota);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+/* ================================
+   TESTIMONIOS — Texto
+================================ */
+.testimonio-texto {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.70);
+    font-style: italic;
+    margin-bottom: 28px;
+}
+
+/* ================================
+   TESTIMONIOS — Autor
+================================ */
+.testimonio-autor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.autor-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-terracota);
+    color: var(--color-crema);
+    font-family: var(--fuente-titulo);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.autor-info strong {
+    display: block;
+    font-size: 14px;
+    color: var(--color-crema);
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.autor-info span {
+    font-size: 12px;
+    color: rgba(245, 240, 232, 0.40);
+    letter-spacing: 0.5px;
+}
+
+/*-----------------------------------------------------------------------*/
+/* ================================
+   CONTACTO — Layout general
+================================ */
+#contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 120px 60px;
+    background-color: var(--color-crema);
+}
+
+/* ================================
+   CONTACTO — Columna izquierda
+================================ */
+.contacto-info .section-eyebrow { color: var(--color-terracota); }
+.contacto-info .section-titulo  { color: var(--color-texto); }
+.contacto-info .section-descripcion { color: var(--color-texto) }
+
+.contacto-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 32px;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 2px solid var(--color-oscuro);
+}
+
+.contacto-item:last-child {
+    border-bottom: none;
+}
+
+.contacto-icono {
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.contacto-item strong {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgb(82, 82, 82);
+    margin-bottom: 4px;
+}
+
+.contacto-item span {
+    font-size: 14px;
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+/* ================================
+   CONTACTO — Formulario
+================================ */
+.contacto-formulario {
+    padding-top: 8px;
+}
+
+#form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-campo label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-warm-white);
+}
+
+.form-campo input,
+.form-campo select,
+.form-campo textarea {
+    background: var(--color-arena);
+    border: 1px solid rgba(223, 146, 22, 0.12);
+    color: var(--color-warm-white);
+    padding: 14px 16px;
+    font-size: 14px;
+    font-family: var(--fuente-cuerpo);
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-campo input:focus,
+.form-campo select:focus,
+.form-campo textarea:focus {
+    border-color: var(--color-warm-white);
+}
+
+.form-campo textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.form-campo select option {
+    background: var(--color-crema);
+}
+
+/* ================================
+   CONTACTO — Botón enviar
+================================ */
+.btn-submit {
+    background-color: var(--color-oscuro);
+    color: var(--color-crema);
+    border: none;
+    padding: 18px 36px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: var(--fuente-cuerpo);
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-start;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-terracota);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   CONTACTO — Confirmación
+================================ */
+.form-confirmacion {
+    display: none;              /* Oculto hasta que se envíe el form */
+    color: var(--color-terracota);
+    font-size: 14px;
+    padding: 12px 0;
+}
